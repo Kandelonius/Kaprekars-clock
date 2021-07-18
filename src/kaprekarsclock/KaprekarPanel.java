@@ -1,11 +1,11 @@
 package kaprekarsclock;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.Font;
 import java.awt.Color;
 
 public class KaprekarPanel extends JPanel {
-    JPanel panel;
+    JLabel panel;
 
     KaprekarPanel() {
         panel.setBounds(150, 150, 150, 150);

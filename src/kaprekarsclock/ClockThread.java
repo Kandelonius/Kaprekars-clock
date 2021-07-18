@@ -16,7 +16,7 @@ public class ClockThread extends Thread {
         while (true) {
             Calendar cal = Calendar.getInstance();
             time = formattedTime.format(cal.getTime());
-            clock.KClock.setText(time);
+            clock.KClock.setText("Time: " + time);
         }
     }
 }
