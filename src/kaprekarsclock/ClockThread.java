@@ -17,6 +17,9 @@ public class ClockThread extends Thread {
             Calendar cal = Calendar.getInstance();
             time = formattedTime.format(cal.getTime());
             clock.KClock.setText("Time: " + time);
+//            clock.KPanel.
+//            clock.KPanel.setSize(350, 150);
         }
+
     }
 }
