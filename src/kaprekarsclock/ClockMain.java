@@ -36,7 +36,7 @@ public class ClockMain extends JFrame {
         displayFrame.getContentPane().setBackground(Color.black);
         displayFrame.setSize(480,480);
         displayFrame.setLocationRelativeTo(null);
-        KPanel.add(KClock);
+        displayFrame.add(KClock);
         KPanel.add(KNumber);
         displayFrame.add(KPanel);
         displayFrame.add(CPanel);
