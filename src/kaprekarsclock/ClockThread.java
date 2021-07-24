@@ -20,6 +20,5 @@ public class ClockThread extends Thread {
 //            clock.KPanel.
 //            clock.KPanel.setSize(350, 150);
         }
-
     }
 }
