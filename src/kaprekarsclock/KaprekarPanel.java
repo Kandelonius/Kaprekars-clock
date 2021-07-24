@@ -12,4 +12,5 @@ public class KaprekarPanel extends JPanel {
         panel.setFont(new Font("Arial", Font.CENTER_BASELINE, 35));
         panel.setBackground(Color.red);
     }
+
 }
