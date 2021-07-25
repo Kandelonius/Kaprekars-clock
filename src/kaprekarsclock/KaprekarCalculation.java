@@ -17,7 +17,7 @@ public class KaprekarCalculation {
     }
     private static int createDescending(int input) {
         int sorted = 0;
-        Integer ints[] = new Integer[4];
+        Integer[] ints = new Integer[4];
         for (int i = 0; i < 4; i++) {
             if (input >= 1) {
                 ints[i] = (input % 10);
@@ -31,6 +31,10 @@ public class KaprekarCalculation {
             }
         }
         Arrays.sort(ints, Collections.reverseOrder());
+        for (int i = 0; i < 4; i++) {
+            sorted *= 10;
+            sorted += ints[0];
+        }
         return sorted;
     }
 }
