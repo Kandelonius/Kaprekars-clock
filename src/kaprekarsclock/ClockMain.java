@@ -1,6 +1,10 @@
 package kaprekarsclock;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import javax.swing.*;
 
 public class ClockMain extends JFrame {
@@ -46,6 +50,8 @@ public class ClockMain extends JFrame {
     }
 
     public static void main(String[] args) {
-        new ClockMain();
+//        new ClockMain();
+//        KaprekarCalculation k = new KaprekarCalculation();
+        KaprekarCalculation.KCalculate(5263);
     }
 }
