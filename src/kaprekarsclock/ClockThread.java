@@ -27,6 +27,7 @@ public class ClockThread extends Thread {
             clock.KClock.setText("Time: " + time); // run the clock based on the specifications in main
             seconds = time.substring((time.length() - 2));
             if (seconds.equals("00")) {
+                // 4-digit number for hour and minutes in string form that can be sent to KaprekarCalculator
                 hoursAndMinutes = time.substring(0, 2) + time.substring(3, 5);
                 System.out.println(hoursAndMinutes);
             }
