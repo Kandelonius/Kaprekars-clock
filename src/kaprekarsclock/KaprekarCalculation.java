@@ -18,16 +18,16 @@ import java.util.*;
  */
 public class KaprekarCalculation {
     public static void KCalculate(int input) {
-        int count = 0;
+        int count = 0; // iterations
         int descending;
         int ascending;
         List<Integer> ints = new ArrayList<>();
         fillInts(input, ints);
 
         while(input != 6174) {
-            descending = createDescending(ints);
-            ascending = createAscending(ints);
-            input = descending - ascending;
+            descending = createDescending(ints); // minuend
+            ascending = createAscending(ints); // subtrahend
+            input = descending - ascending; // difference
             fillInts(input, ints);
             count++;
         }
