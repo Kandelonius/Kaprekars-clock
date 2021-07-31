@@ -17,11 +17,24 @@ import java.util.*;
  * a 4-digit number.
  */
 public class KaprekarCalculation {
-    public static void KCalculate(int input) {
+
+    public KaprekarCalculation(int input) {
+        KCalculate(input);
+    }
+
+    public KaprekarCalculation(String time) {
+        int intTime = Integer.parseInt(time);
+        KCalculate(intTime);
+    }
+
+    private void KCalculate(int input) {
         int count = 0; // iterations
         int descending;
         int ascending;
         List<Integer> ints = new ArrayList<>();
+
+
+
         fillInts(input, ints);
 
         while(input != 6174) {

@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 public class ClockThread extends Thread {
     ClockMain clock;
     String time, seconds, hoursAndMinutes;
+    KaprekarCalculation kc;
 
     /**
      * Constructor that starts the clock thread
@@ -17,8 +18,9 @@ public class ClockThread extends Thread {
      */
     public ClockThread(ClockMain clock) {
         this.clock = clock;
-        start();
+        start(); // calls the run method of this thread
     }
+
     public void run() {
         DateTimeFormatter formattedTime = DateTimeFormatter.ofPattern("hh:mm:ss");
         while (true) {
@@ -29,7 +31,7 @@ public class ClockThread extends Thread {
             if (seconds.equals("00")) {
                 // 4-digit number for hour and minutes in string form that can be sent to KaprekarCalculator
                 hoursAndMinutes = time.substring(0, 2) + time.substring(3, 5);
-                System.out.println(hoursAndMinutes);
+                new KaprekarCalculation(hoursAndMinutes);
             }
         }
     }
