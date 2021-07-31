@@ -1,17 +1,12 @@
 package kaprekarsclock;
 
-import java.time.Clock;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
 
 /**
  * Finds the time and starts a thread that will give the current time in the form(HH:mm:ss)
  */
 public class ClockThread extends Thread {
-//    Clock cl = Clock.systemDefaultZone();
     ClockMain clock;
     String time;
 
@@ -25,14 +20,11 @@ public class ClockThread extends Thread {
         start();
     }
     public void run() {
-//        SimpleDateFormat formattedTime = new SimpleDateFormat("HH:mm:ss");
         DateTimeFormatter formattedTime = DateTimeFormatter.ofPattern("hh:mm:ss");
         while (true) {
-            LocalTime now = LocalTime.now();
-//            Calendar cal = Calendar.getInstance();
-//            time = formattedTime.format(cal.getTime());
-            time = formattedTime.format(now);
-            clock.KClock.setText("Time: " + time);
+            LocalTime now = LocalTime.now(); // get current time and set it to now
+            time = formattedTime.format(now); // format time for hh:mm:ss
+            clock.KClock.setText("Time: " + time); // run the clock based on the specifications in main
         }
     }
 }
