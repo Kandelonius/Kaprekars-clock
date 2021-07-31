@@ -22,13 +22,13 @@ public class ClockThread extends Thread {
     }
 
     public void run() {
-        DateTimeFormatter formattedTime = DateTimeFormatter.ofPattern("hh:mm:ss");
+        DateTimeFormatter formattedTime = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
         while (true) {
             LocalTime now = LocalTime.now(); // get current time and set it to now
             time = formattedTime.format(now); // format time for hh:mm:ss
-            clock.KClock.setText("Time: " + time); // run the clock based on the specifications in main
-            seconds = time.substring((time.length() - 2));
-            if (seconds.equals("00")) {
+            clock.KClock.setText("Time: " + time.substring(0, 8)); // run the clock based on the specifications in main
+            seconds = time.substring((time.length() - 6));
+            if (seconds.equals("00.000")) {
                 // 4-digit number for hour and minutes in string form that can be sent to KaprekarCalculator
                 hoursAndMinutes = time.substring(0, 2) + time.substring(3, 5);
                 new KaprekarCalculation(hoursAndMinutes);
