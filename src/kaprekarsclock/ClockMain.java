@@ -38,8 +38,8 @@ public class ClockMain extends JFrame {
     }
 
     public static void main(String[] args) {
-//        new ClockMain();
+        new ClockMain();
 //        KaprekarCalculation k = new KaprekarCalculation();
-        KaprekarCalculation.KCalculate(5000);
+//        KaprekarCalculation.KCalculate(5000);
     }
 }
