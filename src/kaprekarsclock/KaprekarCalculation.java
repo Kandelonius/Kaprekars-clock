@@ -22,13 +22,14 @@ public class KaprekarCalculation {
         KCalculate(input);
     }
 
+    private int count = 0; // iterations
     public KaprekarCalculation(String time) {
         int intTime = Integer.parseInt(time);
         KCalculate(intTime);
     }
 
     private void KCalculate(int input) {
-        int count = 0; // iterations
+
         int descending;
         int ascending;
         List<Integer> ints = new ArrayList<>();
@@ -102,5 +103,9 @@ public class KaprekarCalculation {
             sorted += anInt;
         }
         return sorted;
+    }
+
+    public int getCount() {
+        return count;
     }
 }

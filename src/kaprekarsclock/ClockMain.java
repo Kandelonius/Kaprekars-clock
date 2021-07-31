@@ -11,6 +11,7 @@ public class ClockMain extends JFrame {
     JPanel CPanel;
     Color denim = new Color(75, 100, 150);
     Color border = new Color(250, 150, 200);
+    int iterations;
 
     public ClockMain() {
         KClock = new JLabel("");
@@ -25,6 +26,13 @@ public class ClockMain extends JFrame {
         KClock.setForeground(border);
         KClock.setBorder(BorderFactory.createLineBorder(denim, 5));
         KNumber.setFont(new Font("Arial", Font.CENTER_BASELINE, 45));
+        KNumber.setOpaque(true);
+        KNumber.setBackground(Color.black);
+        KNumber.setForeground(border);
+        KNumber.setOpaque(true);
+        KNumber.setBackground(Color.black);
+        KNumber.setForeground(border);
+        KNumber.setBorder(BorderFactory.createLineBorder(denim, 5));
         CPanel.setBackground(Color.black);
         displayFrame.setLayout(new GridLayout(2, 1));
         displayFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -32,9 +40,13 @@ public class ClockMain extends JFrame {
         displayFrame.setBounds(0, 0, 480,200);
         displayFrame.setLocationRelativeTo(null);
         displayFrame.add(CPanel);
+//        displayFrame.add(KNumber);
         CPanel.add(KClock);
+
         displayFrame.setVisible(true);
+        displayFrame.add(KNumber);
         ct = new ClockThread(this);
+//        KNumber.setText("Iterations: " + ct.getIteration());
     }
 
     public static void main(String[] args) {

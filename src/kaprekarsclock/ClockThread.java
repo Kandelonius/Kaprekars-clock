@@ -1,5 +1,6 @@
 package kaprekarsclock;
 
+import javax.swing.*;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -9,7 +10,9 @@ import java.time.format.DateTimeFormatter;
 public class ClockThread extends Thread {
     ClockMain clock;
     String time, seconds, hoursAndMinutes;
-    KaprekarCalculation kc;
+//    KaprekarCalculation kc;
+    boolean first = true;
+    int iteration;
 
     /**
      * Constructor that starts the clock thread
@@ -21,18 +24,28 @@ public class ClockThread extends Thread {
         start(); // calls the run method of this thread
     }
 
+//    public String getIteration() {
+//        iteration = KaprekarCalculation.getCount();
+//        String output = String.valueOf(iteration);
+//        return output;
+//    }
+
     public void run() {
         DateTimeFormatter formattedTime = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
         while (true) {
             LocalTime now = LocalTime.now(); // get current time and set it to now
             time = formattedTime.format(now); // format time for hh:mm:ss
-            clock.KClock.setText("Time: " + time.substring(0, 8)); // run the clock based on the specifications in main
             seconds = time.substring((time.length() - 6));
-            if (seconds.equals("00.000")) {
+            if (seconds.equals("00.000") || first) {
                 // 4-digit number for hour and minutes in string form that can be sent to KaprekarCalculator
                 hoursAndMinutes = time.substring(0, 2) + time.substring(3, 5);
-                new KaprekarCalculation(hoursAndMinutes);
+                KaprekarCalculation kc = new KaprekarCalculation(hoursAndMinutes);
+                iteration = kc.getCount();
+                first = false;
             }
+            clock.KClock.setText(
+                    "Time: " + time.substring(0, 8)); // run the clock based on the specifications in main
+            clock.KNumber.setText("Iterations: " + iteration);
         }
     }
 }
