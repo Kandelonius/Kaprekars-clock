@@ -10,7 +10,6 @@ import java.time.format.DateTimeFormatter;
 public class ClockThread extends Thread {
     ClockMain clock;
     String time, seconds, hoursAndMinutes;
-//    KaprekarCalculation kc;
     boolean first = true;
     int iteration;
 
@@ -23,12 +22,6 @@ public class ClockThread extends Thread {
         this.clock = clock;
         start(); // calls the run method of this thread
     }
-
-//    public String getIteration() {
-//        iteration = KaprekarCalculation.getCount();
-//        String output = String.valueOf(iteration);
-//        return output;
-//    }
 
     public void run() {
         DateTimeFormatter formattedTime = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");

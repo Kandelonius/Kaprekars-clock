@@ -11,7 +11,6 @@ public class ClockMain extends JFrame {
     JPanel CPanel;
     Color denim = new Color(75, 100, 150);
     Color border = new Color(250, 150, 200);
-    int iterations;
 
     public ClockMain() {
         KClock = new JLabel("");
@@ -40,13 +39,10 @@ public class ClockMain extends JFrame {
         displayFrame.setBounds(0, 0, 480,200);
         displayFrame.setLocationRelativeTo(null);
         displayFrame.add(CPanel);
-//        displayFrame.add(KNumber);
         CPanel.add(KClock);
-
         displayFrame.setVisible(true);
         displayFrame.add(KNumber);
         ct = new ClockThread(this);
-//        KNumber.setText("Iterations: " + ct.getIteration());
     }
 
     public static void main(String[] args) {
