@@ -28,13 +28,13 @@ public class KaprekarCalculation {
         KCalculate(intTime);
     }
 
-    private void KCalculate(int input) {
+    public KaprekarCalculation() {
+    }
 
+    private void KCalculate(int input) {
         int descending;
         int ascending;
         List<Integer> ints = new ArrayList<>();
-
-
 
         fillInts(input, ints);
 
