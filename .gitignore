@@ -16,6 +16,9 @@ Thumbs.db
 # thumbnails
 ._*
 
+#java
+*.class
+
 # GIT
 .git/
 
