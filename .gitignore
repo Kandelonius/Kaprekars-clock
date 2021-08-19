@@ -19,9 +19,6 @@ Thumbs.db
 # GIT
 .git/
 
-# Java
-*.class
-
 # packages
 *.jar
 *.war
