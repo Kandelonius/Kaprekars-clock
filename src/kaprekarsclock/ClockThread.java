@@ -12,6 +12,7 @@ public class ClockThread extends Thread {
     String time, seconds, hoursAndMinutes;
     boolean first = true;
     int iteration;
+    KaprekarCalculation kc = new KaprekarCalculation();
 
     /**
      * Constructor that starts the clock thread
@@ -26,8 +27,8 @@ public class ClockThread extends Thread {
     private void getCount(String time) {
         // 4-digit number for hour and minutes in string form that can be sent to KaprekarCalculator
         hoursAndMinutes = time.substring(0, 2) + time.substring(3, 5);
-        KaprekarCalculation kc = new KaprekarCalculation(hoursAndMinutes);
-        iteration = kc.getCount();
+//        KaprekarCalculation kc = new KaprekarCalculation(hoursAndMinutes);
+        iteration = kc.giveCount(hoursAndMinutes);
         first = false;
     }
 

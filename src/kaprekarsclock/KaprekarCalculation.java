@@ -18,27 +18,32 @@ import java.util.*;
  */
 public class KaprekarCalculation {
 
+//    private int count = 0; // iterations
+
     public KaprekarCalculation(int input) {
         KCalculate(input);
     }
-
-    private int count = 0; // iterations
-    public KaprekarCalculation(String time) {
-        int intTime = Integer.parseInt(time);
-        KCalculate(intTime);
-    }
+//    public KaprekarCalculation(String time) {
+//        try {
+//            int intTime = Integer.parseInt(time);
+//            KCalculate(intTime);
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
+//    }
 
     public KaprekarCalculation() {
     }
 
-    private void KCalculate(int input) {
+    private int KCalculate(int input) {
+        int count = 0; // iterations
         int descending;
         int ascending;
         List<Integer> ints = new ArrayList<>();
 
         fillInts(input, ints);
-
-        while(input != 6174) {
+        boolean validNumber = checkInts(ints);
+        while(input != 6174 && validNumber) {
             descending = createDescending(ints); // minuend
             ascending = createAscending(ints); // subtrahend
             input = descending - ascending; // difference
@@ -46,6 +51,13 @@ public class KaprekarCalculation {
             count++;
         }
         System.out.println("Reached " + input + " in " + count + " iterations");
+        return count;
+    }
+
+    private boolean checkInts(List<Integer> ints) {
+        return (!Objects.equals(ints.get(0), ints.get(1)) &&
+                !Objects.equals(ints.get(1), ints.get(2)) &&
+                !Objects.equals(ints.get(2), ints.get(3)));
     }
 
     /**
@@ -105,7 +117,17 @@ public class KaprekarCalculation {
         return sorted;
     }
 
-    public int getCount() {
+    public int giveCount(String time) {
+        int count = 0;
+        try {
+            int intTime = Integer.parseInt(time);
+            count = KCalculate(intTime);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         return count;
+    }
+    public int giveCount(int time) {
+        return KCalculate(time);
     }
 }

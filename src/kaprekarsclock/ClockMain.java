@@ -47,7 +47,8 @@ public class ClockMain extends JFrame {
 
     public static void main(String[] args) {
         new ClockMain();
-//        KaprekarCalculation k = new KaprekarCalculation();
-//        new KaprekarCalculation(41);
+        KaprekarCalculation k = new KaprekarCalculation();
+        System.out.println(k.giveCount(41));
+        System.out.println(k.giveCount(1111));
     }
 }
