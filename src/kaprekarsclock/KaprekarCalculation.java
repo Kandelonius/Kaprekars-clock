@@ -20,9 +20,9 @@ public class KaprekarCalculation {
 
 //    private int count = 0; // iterations
 
-    public KaprekarCalculation(int input) {
-        KCalculate(input);
-    }
+//    public KaprekarCalculation(int input) {
+//        KCalculate(input);
+//    }
 //    public KaprekarCalculation(String time) {
 //        try {
 //            int intTime = Integer.parseInt(time);
@@ -119,15 +119,21 @@ public class KaprekarCalculation {
 
     public int giveCount(String time) {
         int count = 0;
-        try {
-            int intTime = Integer.parseInt(time);
-            count = KCalculate(intTime);
-        } catch (Exception e) {
-            System.out.println(e);
+        if (time.length() < 5) {
+            try {
+                int intTime = Integer.parseInt(time);
+                count = KCalculate(intTime);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            return count;
         }
-        return count;
+        return 0;
     }
     public int giveCount(int time) {
-        return KCalculate(time);
+        if (time < 9999) {
+            return KCalculate(time);
+        }
+        return 0;
     }
 }
