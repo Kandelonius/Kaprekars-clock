@@ -50,5 +50,6 @@ public class ClockMain extends JFrame {
         KaprekarCalculation k = new KaprekarCalculation();
         System.out.println(k.giveCount(41));
         System.out.println(k.giveCount(1111));
+//        System.out.println(k.giveCount("1234")); // calling this breaks functionality from the thread
     }
 }
